@@ -60,6 +60,10 @@ func (s *Smpp) Connect(host string, port int) (err error) {
 	return err
 }
 
+func (s *Smpp) GetConn() (conn *net.Conn) {
+	return &s.conn
+}
+
 func NewSmppConnectTLS(host string, port int, config *tls.Config) (*Smpp, error) {
 	s := &Smpp{}
 
